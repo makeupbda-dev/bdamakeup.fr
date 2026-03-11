@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Déclaration d'Accessibilité - BDA Makeup</title>
+  <meta name="description" content="Déclaration d'accessibilité numérique de BDA Makeup - Conformité RGAA et WCAG." />
+  <link rel="canonical" href="https://bdamakeup.com/accessibilite.html" />
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- DNS prefetch -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ===== RESET & VARIABLES ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-section: #111111;
+      --bg-card: #1a1a1a;
+      --gold: #c9a96e;
+      --gold-light: #e2c891;
+      --gold-dark: #a07d4a;
+      --rose: #d4a0a0;
+      --white: #f5f0eb;
+      --gray: #888888;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-script: 'Great Vibes', cursive;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Thème clair */
+    [data-theme="light"] {
+      --bg-dark: #ffffff;
+      --bg-section: #f8f8f8;
+      --bg-card: #f0f0f0;
+      --white: #1a1a1a;
+      --gray: #666666;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-dark);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; transition: color var(--transition); }
+    a:hover { color: var(--gold); }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 0.8rem 3rem;
+      box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    }
+
+    [data-theme="light"] .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-logo {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      position: absolute;
+      left: 3rem;
+    }
+
+    .nav-logo:hover { color: var(--gold-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-right: 1rem;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(201, 169, 110, 0.1);
+      transform: scale(1.1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 3rem;
+    }
+
+    /* ===== ACCESSIBILITY PAGE ===== */
+    .a11y-page {
+      padding: 8rem 2rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .a11y-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .a11y-label {
+      font-family: var(--font-script);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .a11y-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .a11y-date {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .a11y-section {
+      margin-bottom: 3rem;
+    }
+
+    .a11y-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .a11y-section h2 i {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .a11y-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    .a11y-section p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .a11y-section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .a11y-section li {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .a11y-section li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .a11y-info-box {
+      background: var(--bg-card);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .a11y-info-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .a11y-info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .a11y-success-box {
+      background: rgba(76, 175, 80, 0.1);
+      border-left: 3px solid #4CAF50;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .a11y-success-box h4 {
+      color: #4CAF50;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .a11y-partial-box {
+      background: rgba(255, 193, 7, 0.1);
+      border-left: 3px solid #ffc107;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .a11y-partial-box h4 {
+      color: #ffc107;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .a11y-failure-box {
+      background: rgba(244, 67, 54, 0.1);
+      border-left: 3px solid #f44336;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .a11y-failure-box h4 {
+      color: #f44336;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .a11y-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .a11y-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .a11y-contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(201, 169, 110, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .a11y-contact-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .a11y-contact-text span {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .a11y-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .a11y-back-link i {
+      transition: transform var(--transition);
+    }
+
+    .a11y-back-link:hover i {
+      transform: translateX(-4px);
+    }
+
+    .a11y-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--bg-dark);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      padding: 0.8rem 1.8rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 1rem;
+    }
+
+    .a11y-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-section);
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .theme-toggle {
+        display: none;
+      }
+
+      .a11y-page {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      .a11y-contact {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="BDA Makeup - Accueil">BDA Makeup</a>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a href="index.html#accueil" role="menuitem">Accueil</a></li>
+      <li role="none"><a href="index.html#galerie" role="menuitem">Galerie</a></li>
+      <li role="none"><a href="index.html#apropos" role="menuitem">À propos</a></li>
+      <li role="none"><a href="index.html#contact" role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer entre le thème clair et sombre">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ACCESSIBILITY PAGE -->
+  <main class="a11y-page" role="main">
+    <div class="a11y-header">
+      <p class="a11y-label">Accessibilité numérique</p>
+      <h1 class="a11y-title">Déclaration d'Accessibilité</h1>
+      <p class="a11y-date">Établissement de cette déclaration : mars 2025</p>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-info-circle"></i> Engagement d'accessibilité</h2>
+      <p>Conformément à la loi n° 2005-102 du 11 février 2005 pour l'égalité des droits et des chances, la participation et la citoyenneté des personnes handicapées, et au décret n° 2009-834 du 2 juillet 2009 relatif à l'accessibilité des sites internet de l'administration, BDA Makeup s'engage à rendre son site internet accessible à toutes les personnes handicapées.</p>
+      <p>Ce site internet est <strong>partiellement conforme</strong> au Référentiel Général d'Amélioration de l'Accessibilité (RGAA) version 4.0, qui est le référentiel d'application de l'article 47 de la loi n° 2018-493 du 20 juin 2018.</p>
+      <div class="a11y-info-box" style="margin-top: 1rem;">
+        <p><strong>Modèle de déclaration :</strong> Cette déclaration a été établie à partir du <a href="https://reference.archives.gouv.fr/dspace/handle/1/10887" target="_blank" rel="noopener noreferrer">modèle de déclaration d'accessibilité</a> mis à disposition par l'État français.</p>
+      </div>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-clipboard-check"></i> Éléments techniques</h2>
+      <div class="a11y-info-box">
+        <p><strong>Éditeur du site :</strong> Anna Brevière--Dubard - BDA Makeup</p>
+        <p><strong>Adresse :</strong> Île-de-France, France</p>
+        <p><strong>Email :</strong> <a href="mailto:makeup.bda@gmail.com">makeup.bda@gmail.com</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:+33781975952">+33 7 81 97 59 52</a></p>
+        <p><strong>Hébergeur :</strong> Cloudflare</p>
+        <p><strong>Technologies utilisées :</strong> HTML5, CSS3, JavaScript</p>
+        <p><strong>Navigateurs testés :</strong> Chrome, Firefox, Safari, Edge (versions récentes)</p>
+        <p><strong>Logiciels d'assistance testés :</strong> NVDA, VoiceOver</p>
+      </div>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-tasks"></i> Résultat de l'évaluation</h2>
+      <p>Le site BDA Makeup a fait l'objet d'une auto-évaluation de conformité selon le RGAA v4.0. Voici les résultats basés sur le code actuel du site :</p>
+
+      <div class="a11y-success-box">
+        <h4><i class="fas fa-check-circle"></i> Critères conformes (extraits)</h4>
+        <ul>
+          <li><strong>Alternatives textuelles :</strong> Chaque image informative (galerie, présentation) possède un attribut <code>alt</code> pertinent. Les éléments purement décoratifs (particules d'arrière-plan, icônes) sont ignorés par les lecteurs d'écran via <code>aria-hidden="true"</code>.</li>
+          <li><strong>Navigation au clavier :</strong> Un lien d'évitement « Aller au contenu principal » est présent en haut de page.</li>
+          <li><strong>Formulaires :</strong> Chaque champ possède une étiquette <code>&lt;label&gt;</code> correctement liée. Les attributs <code>autocomplete</code> et <code>inputmode</code> sont utilisés pour faciliter la saisie (notamment pour les personnes avec des troubles cognitifs ou moteurs).</li>
+          <li><strong>Composants d'interface (ARIA) :</strong> Les modales (ex: préférences cookies) utilisent correctement les attributs <code>role="dialog"</code> et <code>aria-modal="true"</code>. Les boutons d'action iconographiques (ex: thème, menu burger) possèdent des <code>aria-label</code> explicites.</li>
+          <li><strong>Structure :</strong> La langue de la page est déclarée (<code>lang="fr"</code>) et la hiérarchie des titres (H1, H2, H3) est respectée et logique.</li>
+        </ul>
+      </div>
+
+      <div class="a11y-partial-box">
+        <h4><i class="fas fa-exclamation-triangle"></i> Critères partiellement conformes</h4>
+        <ul>
+          <li><strong>Contrastes de couleurs :</strong> Bien que le thème sombre par défaut offre d'excellents contrastes, certains éléments textuels (notamment la couleur dorée utilisée pour les liens ou certains textes) peuvent présenter un ratio de contraste insuffisant lorsqu'ils sont affichés sur le fond clair du « Thème clair » optionnel.</li>
+          <li><strong>Système de navigation :</strong> Bien que le menu de navigation soit clair, il manque actuellement un second moyen de navigation direct (comme un plan du site détaillé accessible depuis le pied de page ou un moteur de recherche) pour être totalement conforme au critère de navigation multiple.</li>
+        </ul>
+      </div>
+
+      <div class="a11y-failure-box">
+        <h4><i class="fas fa-times-circle"></i> Critères non conformes</h4>
+        <ul>
+          <li><strong>Gestion du focus (Lightbox) :</strong> Lors de l'ouverture de la galerie d'images en plein écran (lightbox), le focus du clavier n'est pas "piégé" à l'intérieur de la fenêtre modale. De plus, à la fermeture, le focus ne retourne pas sur l'image initialement cliquée. Cela perturbe la navigation pour les utilisateurs de lecteurs d'écran et de navigation exclusive au clavier.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-wheelchair"></i> Fonctionnalités d'accessibilité</h2>
+      <p>Le site BDA Makeup intègre nativement plusieurs fonctionnalités pour garantir une meilleure inclusivité :</p>
+
+      <h3>Navigation et repères</h3>
+      <ul>
+        <li><strong>Lien d'évitement :</strong> Un lien caché en haut de page apparaît lors de la navigation au clavier (Touche Tab) pour sauter directement au contenu, évitant de repasser par le menu à chaque page.</li>
+        <li><strong>Balisage sémantique :</strong> Utilisation des balises HTML5 (<code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>) pour permettre aux technologies d'assistance de comprendre la structure de la page.</li>
+      </ul>
+
+      <h3>Adaptabilité visuelle</h3>
+      <ul>
+        <li><strong>Redimensionnement :</strong> Utilisation d'unités relatives (<code>clamp()</code>, <code>rem</code>, <code>vw</code>) permettant au texte de s'adapter dynamiquement à la taille de l'écran et d'être zoomé jusqu'à 200% sans perte d'information ni de fonctionnalité.</li>
+        <li><strong>Choix du thème :</strong> Un bouton de bascule clair/sombre permet aux utilisateurs de choisir l'interface la plus adaptée à leur fatigue visuelle ou leur sensibilité à la lumière.</li>
+      </ul>
+
+      <h3>Interactions et formulaires</h3>
+      <ul>
+        <li><strong>Aide à la saisie :</strong> Le formulaire de contact utilise les attributs d'autocomplétion navigateur (nom, email, téléphone) pour réduire l'effort de frappe.</li>
+        <li><strong>Annonces vocales :</strong> Le bandeau d'information sur les cookies utilise l'attribut <code>aria-live="polite"</code> pour être lu par les lecteurs d'écran lors de son apparition sans interrompre l'utilisateur.</li>
+        <li><strong>Accessibilité mobile :</strong> Boutons et liens espacés de manière adéquate, avec un bouton de contact flottant généreux pour les utilisateurs sur appareils tactiles.</li>
+      </ul>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-tools"></i> Améliorations en cours</h2>
+      <p>BDA Makeup s'engage à améliorer continuellement l'accessibilité de son site. Les actions suivantes sont prévues :</p>
+      <ul>
+        <li>Amélioration du contraste des couleurs sur certains éléments</li>
+        <li>Optimisation de la compatibilité de la galerie lightbox avec les lecteurs d'écran</li>
+        <li>Ajout de balises ARIA supplémentaires pour une meilleure sémantique</li>
+        <li>Tests réguliers avec des utilisateurs handicapés</li>
+      </ul>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-envelope"></i> Contacter pour un problème d'accessibilité</h2>
+      <p>Si vous rencontrez un défaut d'accessibilité vous empêchant d'accéder à un contenu ou une fonctionnalité du site, merci de nous en informer :</p>
+
+      <div class="a11y-contact">
+        <div class="a11y-contact-item">
+          <div class="a11y-contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="a11y-contact-text">
+            <strong>Par email</strong>
+            <span><a href="mailto:makeup.bda@gmail.com?subject=Problème%20d'accessibilité">makeup.bda@gmail.com</a></span>
+          </div>
+        </div>
+        <div class="a11y-contact-item">
+          <div class="a11y-contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="a11y-contact-text">
+            <strong>Par téléphone</strong>
+            <span><a href="tel:+33781975952">+33 7 81 97 59 52</a></span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.5rem;">Veuillez préciser :</p>
+      <ul>
+        <li>La page où le problème est rencontré</li>
+        <li>La nature du problème</li>
+        <li>Le navigateur et le logiciel d'assistance utilisés</li>
+      </ul>
+
+      <p style="margin-top: 1rem;">Nous nous engageons à répondre dans un délai de 14 jours maximum.</p>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-gavel"></i> Voie de recours</h2>
+      <p>Si vous n'obtenez pas de satisfaction de notre part, vous pouvez :</p>
+
+      <h3>1. Contacter le Défenseur des droits</h3>
+      <div class="a11y-info-box">
+        <p>Le Défenseur des droits est une autorité constitutionnelle indépendante qui aide les usagers dans leurs démarches auprès de l'administration. Il peut être saisi gratuitement.</p>
+        <p><strong>Site web :</strong> <a href="https://www.defenseurdesdroits.fr" target="_blank" rel="noopener noreferrer">www.defenseurdesdroits.fr</a></p>
+        <p><strong>Formulaire de contact en ligne :</strong> <a href="https://formulaire.defenseurdesdroits.fr/" target="_blank" rel="noopener noreferrer">formulaire.defenseurdesdroits.fr</a></p>
+        <p><strong>Par courrier :</strong></p>
+        <p>Défenseur des droits<br>11 rue Saint-Bernard<br>75156 Paris Cedex 03</p>
+      </div>
+
+      <h3>2. Contacter la CNIL</h3>
+      <div class="a11y-info-box">
+        <p>Pour les questions relatives à la protection des données personnelles :</p>
+        <p><strong>CNIL</strong></p>
+        <p>3 place de Fontenoy - TSA 80715</p>
+        <p>75334 Paris Cedex 07</p>
+        <p><a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></p>
+      </div>
+    </div>
+
+    <div class="a11y-section">
+      <h2><i class="fas fa-file-alt"></i> Suivi de la déclaration</h2>
+      <p>Cette déclaration d'accessibilité a été établie le <strong>8 mars 2025</strong> et sera mise à jour annuellement ou lors de modifications significatives du site.</p>
+      <p>La prochaine mise à jour est prévue pour <strong>mars 2026</strong>.</p>
+    </div>
+
+    <a href="index.html" class="a11y-back-link">
+      <i class="fas fa-arrow-left"></i>
+      <span>Retour à l'accueil</span>
+    </a>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-text">&copy; 2025 BDA Makeup — Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="politique-confidentialite.html">Confidentialité</a>
+      <a href="accessibilite.html">Accessibilité</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+  <!-- THEME TOGGLE SCRIPT -->
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+
+      // Vérifier le thème enregistré
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      }
+
+      themeToggle.addEventListener('click', function() {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+        if (isLight) {
+          document.documentElement.removeAttribute('data-theme');
+          themeIcon.classList.replace('fa-moon', 'fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          themeIcon.classList.replace('fa-sun', 'fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    })();
+
+    /* ===== NAVBAR SCROLL ===== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+  </script>
+</body>
+</html>

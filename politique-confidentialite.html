@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Politique de Confidentialité - BDA Makeup</title>
+  <meta name="description" content="Politique de confidentialité et RGPD de BDA Makeup - Comment nous protégeons vos données personnelles." />
+  <link rel="canonical" href="https://bdamakeup.com/politique-confidentialite.html" />
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- DNS prefetch -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ===== RESET & VARIABLES ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-section: #111111;
+      --bg-card: #1a1a1a;
+      --gold: #c9a96e;
+      --gold-light: #e2c891;
+      --gold-dark: #a07d4a;
+      --rose: #d4a0a0;
+      --white: #f5f0eb;
+      --gray: #888888;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-script: 'Great Vibes', cursive;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Thème clair */
+    [data-theme="light"] {
+      --bg-dark: #ffffff;
+      --bg-section: #f8f8f8;
+      --bg-card: #f0f0f0;
+      --white: #1a1a1a;
+      --gray: #666666;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-dark);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; transition: color var(--transition); }
+    a:hover { color: var(--gold); }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 0.8rem 3rem;
+      box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    }
+
+    [data-theme="light"] .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-logo {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      position: absolute;
+      left: 3rem;
+    }
+
+    .nav-logo:hover { color: var(--gold-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-right: 1rem;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(201, 169, 110, 0.1);
+      transform: scale(1.1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 3rem;
+    }
+
+    /* ===== PRIVACY PAGE ===== */
+    .privacy-page {
+      padding: 8rem 2rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .privacy-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .privacy-label {
+      font-family: var(--font-script);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .privacy-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-date {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .privacy-section {
+      margin-bottom: 3rem;
+    }
+
+    .privacy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .privacy-section h2 i {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .privacy-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    .privacy-section p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .privacy-section li {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .privacy-section li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .privacy-info-box {
+      background: var(--bg-card);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .privacy-info-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .privacy-info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .privacy-table th,
+    .privacy-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .privacy-table th {
+      background: rgba(201, 169, 110, 0.1);
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .privacy-table td {
+      color: var(--gray);
+    }
+
+    .privacy-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .privacy-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .privacy-contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(201, 169, 110, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .privacy-contact-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .privacy-contact-text span {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .privacy-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .privacy-back-link i {
+      transition: transform var(--transition);
+    }
+
+    .privacy-back-link:hover i {
+      transform: translateX(-4px);
+    }
+
+    .privacy-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--bg-dark);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      padding: 0.8rem 1.8rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 1rem;
+    }
+
+    .privacy-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-section);
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .theme-toggle {
+        display: none;
+      }
+
+      .privacy-page {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      .privacy-contact {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .privacy-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="BDA Makeup - Accueil">BDA Makeup</a>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a href="index.html#accueil" role="menuitem">Accueil</a></li>
+      <li role="none"><a href="index.html#galerie" role="menuitem">Galerie</a></li>
+      <li role="none"><a href="index.html#apropos" role="menuitem">À propos</a></li>
+      <li role="none"><a href="index.html#contact" role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer entre le thème clair et sombre">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PRIVACY PAGE -->
+  <main class="privacy-page" role="main">
+    <div class="privacy-header">
+      <p class="privacy-label">Protection des données</p>
+      <h1 class="privacy-title">Politique de Confidentialité</h1>
+      <p class="privacy-date">Dernière mise à jour : mars 2025</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+      <p>Bienvenue sur la politique de confidentialité de BDA Makeup. La protection de vos données personnelles est une priorité absolue pour nous. Le présent document vous informe de manière transparente sur la manière dont nous collectons, utilisons et protégeons vos informations personnelles.</p>
+      <p>Cette politique de confidentialité est conforme au Règlement Général sur la Protection des Données (RGPD) n° 2016/679 et à la loi Informatique et Libertés du 6 janvier 1978.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-user-shield"></i> Responsable du traitement</h2>
+      <div class="privacy-info-box">
+        <p><strong>Responsable du traitement :</strong> Anna Brevière--Dubard</p>
+        <p><strong>Activité :</strong> Maquilleuse professionnelle indépendante</p>
+        <p><strong>Statut :</strong> Micro-entreprise (entreprise individuelle)</p>
+        <p><strong>Email :</strong> <a href="mailto:makeup.bda@gmail.com">makeup.bda@gmail.com</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:+33781975952">+33 7 81 97 59 52</a></p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-database"></i> Données personnelles collectées</h2>
+      <p>Nous collectons uniquement les données nécessaires au bon fonctionnement de notre activité et à la prestation de nos services :</p>
+
+      <h3>Via le formulaire de contact</h3>
+      <ul>
+        <li>Nom et prénom</li>
+        <li>Adresse email</li>
+        <li>Numéro de téléphone (facultatif)</li>
+        <li>Message / Détails de votre demande</li>
+        <li>Type de prestation souhaitée</li>
+      </ul>
+
+      <h3>Données techniques (automatiques)</h3>
+      <ul>
+        <li>Adresse IP</li>
+        <li>Type de navigateur</li>
+        <li>Date et heure de connexion</li>
+        <li>Pages visitées sur le site</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-bullseye"></i> Finalités du traitement</h2>
+      <p>Vos données personnelles sont utilisées exclusivement pour les finalités suivantes :</p>
+
+      <table class="privacy-table">
+        <thead>
+          <tr>
+            <th>Finalité</th>
+            <th>Description</th>
+            <th>Fondement juridique</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Réponse aux demandes</strong></td>
+            <td>Répondre à vos messages et demandes d'informations</td>
+            <td>Exécution d'une prestation préalable</td>
+          </tr>
+          <tr>
+            <td><strong>Devis et réservation</strong></td>
+            <td>Établir des devis et organiser les rendez-vous</td>
+            <td>Exécution d'un contrat</td>
+          </tr>
+          <tr>
+            <td><strong>Communication</strong></td>
+            <td>Vous informer de modifications concernant votre rendez-vous</td>
+            <td>Intérêt légitime</td>
+          </tr>
+          <tr>
+            <td><strong>Amélioration du site</strong></td>
+            <td>Analyser l'utilisation du site pour l'améliorer</td>
+            <td>Intérêt légitime</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-clock"></i> Durée de conservation</h2>
+      <p>Vos données personnelles sont conservées pendant une durée limitée et proportionnelle aux finalités du traitement :</p>
+
+      <div class="privacy-info-box">
+        <p><strong>Données de contact :</strong> 3 ans à compter du dernier échange</p>
+        <p><strong>Données de devis/commande :</strong> 3 ans à compter de la prestation</p>
+        <p><strong>Données techniques (logs) :</strong> 13 mois maximum</p>
+        <p><strong>Données comptables :</strong> 10 ans (obligation légale)</p>
+      </div>
+      <p>Au-delà de ces délais, vos données sont soit supprimées, soit anonymisées de manière irréversible.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-share-square"></i> Destinataires des données</h2>
+      <p>Vos données personnelles ne sont jamais vendues à des tiers. Elles peuvent être communiquées uniquement aux destinataires suivants :</p>
+      <ul>
+        <li><strong>Hébergeur du site (Cloudflare) :</strong> Pour l'hébergement sécurisé du site et des formulaires</li>
+        <li><strong>Comptable (le cas échéant) :</strong> Pour la gestion comptable de l'entreprise</li>
+        <li><strong>Autorités compétentes :</strong> En cas d'obligation légale (justice, administrations)</li>
+      </ul>
+      <p>Aucune donnée personnelle n'est transférée hors de l'Union Européenne.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-cookie-bite"></i> Politique des cookies</h2>
+      <p>Ce site web utilise des cookies pour améliorer votre expérience de navigation.</p>
+
+      <h3>Types de cookies utilisés</h3>
+      <table class="privacy-table">
+        <thead>
+          <tr>
+            <th>Nom du cookie</th>
+            <th>Finalité</th>
+            <th>Durée</th>
+            <th>Essentiel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>bda_cookie_consent</code></td>
+            <td>Mémorise votre choix concernant les cookies</td>
+            <td>1 an</td>
+            <td>Non</td>
+          </tr>
+          <tr>
+            <td><code>bda_cookie_preferences</code></td>
+            <td>Stocke vos préférences de cookies</td>
+            <td>1 an</td>
+            <td>Non</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Vos choix</h3>
+      <p>Vous pouvez à tout moment :</p>
+      <ul>
+        <li>Accepter ou refuser les cookies via le bandeau de consentement</li>
+        <li>Modifier vos préférences en cliquant sur l'icône de paramètres (engrenage) en bas à gauche</li>
+        <li>Configurer votre navigateur pour refuser les cookies (cela peut limiter certaines fonctionnalités)</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-user-check"></i> Vos droits RGPD</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+
+      <div class="privacy-info-box">
+        <p><strong>Droit d'accès :</strong> Vous pouvez demander une copie de toutes les données que nous détenons sur vous.</p>
+        <p><strong>Droit de rectification :</strong> Vous pouvez demander la correction de données inexactes ou incomplètes.</p>
+        <p><strong>Droit à l'effacement (droit à l'oubli) :</strong> Vous pouvez demander la suppression de vos données dans certaines situations.</p>
+        <p><strong>Droit à la limitation du traitement :</strong> Vous pouvez demander la limitation du traitement de vos données.</p>
+        <p><strong>Droit à la portabilité :</strong> Vous pouvez recevoir vos données dans un format structuré et les transmettre à un autre responsable.</p>
+        <p><strong>Droit d'opposition :</strong> Vous pouvez vous opposer au traitement de vos données pour des raisons légitimes.</p>
+        <p><strong>Droit de ne pas faire l'objet d'une décision automatisée :</strong> Vous ne faites pas l'objet de prise de décision automatisée.</p>
+      </div>
+
+      <h3>Comment exercer vos droits ?</h3>
+      <p>Pour exercer l'un de ces droits, contactez-nous :</p>
+      <div class="privacy-contact">
+        <div class="privacy-contact-item">
+          <div class="privacy-contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="privacy-contact-text">
+            <strong>Par email</strong>
+            <span><a href="mailto:makeup.bda@gmail.com">makeup.bda@gmail.com</a></span>
+          </div>
+        </div>
+        <div class="privacy-contact-item">
+          <div class="privacy-contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="privacy-contact-text">
+            <strong>Par téléphone</strong>
+            <span><a href="tel:+33781975952">+33 7 81 97 59 52</a></span>
+          </div>
+        </div>
+      </div>
+      <p>Nous nous engageons à répondre à votre demande dans un délai d'un mois maximum.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-lock"></i> Sécurité des données</h2>
+      <p>Nous mettons en œuvre toutes les mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre toute accès non autorisé, perte, altération ou divulgation :</p>
+      <ul>
+        <li>Site hébergé sur une plateforme sécurisée (Cloudflare)</li>
+        <li>Connexion chiffrée HTTPS/SSL</li>
+        <li>Accès restreint aux données personnelles</li>
+        <li>Sauvegardes régulières</li>
+        <li>Mises à jour de sécurité régulières</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-gavel"></i> Recours et autorité de contrôle</h2>
+      <p>Si vous estimez que nos pratiques de traitement ne respectent pas la réglementation en vigueur, vous avez la possibilité de :</p>
+      <ul>
+        <li>Contacter notre délégué à la protection des données (DPO) à l'adresse email indiquée ci-dessus</li>
+        <li>Déposer une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés)</li>
+      </ul>
+
+      <div class="privacy-info-box">
+        <p><strong>CNIL</strong></p>
+        <p>3 place de Fontenoy - TSA 80715</p>
+        <p>75334 Paris Cedex 07</p>
+        <p><a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></p>
+        <p><a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">Formulaire de réclamation en ligne</a></p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <h2><i class="fas fa-edit"></i> Modifications de la politique</h2>
+      <p>Nous pouvons mettre à jour cette politique de confidentialité à tout moment pour refléter des changements dans nos pratiques ou pour des raisons légales. Toute modification sera datée et vous sera communiquée par email si elle affecte substantiellement le traitement de vos données.</p>
+    </div>
+
+    <a href="index.html" class="privacy-back-link">
+      <i class="fas fa-arrow-left"></i>
+      <span>Retour à l'accueil</span>
+    </a>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-text">&copy; 2025 BDA Makeup — Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="accessibilite.html">Accessibilité</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+  <!-- THEME TOGGLE SCRIPT -->
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+
+      // Vérifier le thème enregistré
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      }
+
+      themeToggle.addEventListener('click', function() {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+        if (isLight) {
+          document.documentElement.removeAttribute('data-theme');
+          themeIcon.classList.replace('fa-moon', 'fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          themeIcon.classList.replace('fa-sun', 'fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    })();
+
+    /* ===== NAVBAR SCROLL ===== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+  </script>
+</body>
+</html>

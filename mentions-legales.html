@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Mentions Légales - BDA Makeup</title>
+  <meta name="description" content="Mentions légales de BDA Makeup - Anna Brevière--Dubard, maquilleuse professionnelle." />
+  <link rel="canonical" href="https://bdamakeup.com/mentions-legales.html" />
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- DNS prefetch -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ===== RESET & VARIABLES ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-section: #111111;
+      --bg-card: #1a1a1a;
+      --gold: #c9a96e;
+      --gold-light: #e2c891;
+      --gold-dark: #a07d4a;
+      --rose: #d4a0a0;
+      --white: #f5f0eb;
+      --gray: #888888;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-script: 'Great Vibes', cursive;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Thème clair */
+    [data-theme="light"] {
+      --bg-dark: #ffffff;
+      --bg-section: #f8f8f8;
+      --bg-card: #f0f0f0;
+      --white: #1a1a1a;
+      --gray: #666666;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-dark);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; transition: color var(--transition); }
+    a:hover { color: var(--gold); }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 0.8rem 3rem;
+      box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    }
+
+    [data-theme="light"] .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-logo {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      position: absolute;
+      left: 3rem;
+    }
+
+    .nav-logo:hover { color: var(--gold-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-right: 1rem;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(201, 169, 110, 0.1);
+      transform: scale(1.1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 3rem;
+    }
+
+    /* ===== LEGAL PAGE ===== */
+    .legal-page {
+      padding: 8rem 2rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .legal-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .legal-label {
+      font-family: var(--font-script);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .legal-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .legal-date {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .legal-section {
+      margin-bottom: 3rem;
+    }
+
+    .legal-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .legal-section h2 i {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .legal-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    .legal-section p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .legal-section li {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .legal-section li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .legal-info-box {
+      background: var(--bg-card);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .legal-info-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .legal-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .legal-contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(201, 169, 110, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .legal-contact-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .legal-contact-text span {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .legal-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .legal-back-link i {
+      transition: transform var(--transition);
+    }
+
+    .legal-back-link:hover i {
+      transform: translateX(-4px);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-section);
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .theme-toggle {
+        display: none;
+      }
+
+      .legal-page {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      .legal-contact {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="BDA Makeup - Accueil">BDA Makeup</a>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a href="index.html#accueil" role="menuitem">Accueil</a></li>
+      <li role="none"><a href="index.html#galerie" role="menuitem">Galerie</a></li>
+      <li role="none"><a href="index.html#apropos" role="menuitem">À propos</a></li>
+      <li role="none"><a href="index.html#contact" role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer entre le thème clair et sombre">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- LEGAL PAGE -->
+  <main class="legal-page" role="main">
+    <div class="legal-header">
+      <p class="legal-label">Informations juridiques</p>
+      <h1 class="legal-title">Mentions Légales</h1>
+      <p class="legal-date">Dernière mise à jour : mars 2025</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><i class="fas fa-user"></i> Éditeur du site</h2>
+      <div class="legal-info-box">
+        <p><strong>Nom :</strong> Anna Brevière--Dubard</p>
+        <p><strong>Activité :</strong> Maquilleuse professionnelle indépendante</p>
+        <p><strong>Forme juridique :</strong> Micro-entreprise (entreprise individuelle)</p>
+        <p><strong>Diplôme :</strong> Bachelor Makeup Artist - ITM Paris</p>
+      </div>
+      <div class="legal-contact">
+        <div class="legal-contact-item">
+          <div class="legal-contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="legal-contact-text">
+            <strong>Email</strong>
+            <span><a href="mailto:makeup.bda@gmail.com">makeup.bda@gmail.com</a></span>
+          </div>
+        </div>
+        <div class="legal-contact-item">
+          <div class="legal-contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="legal-contact-text">
+            <strong>Téléphone</strong>
+            <span><a href="tel:+33781975952">+33 7 81 97 59 52</a></span>
+          </div>
+        </div>
+        <div class="legal-contact-item">
+          <div class="legal-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="legal-contact-text">
+            <strong>Zone d'intervention</strong>
+            <span>Île-de-France</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2><i class="fas fa-server"></i> Hébergement du site</h2>
+      <p>Le site web est hébergé par :</p>
+      <div class="legal-info-box">
+        <p><strong>Hébergeur :</strong> Cloudflare</p>
+        <p><strong>Adresse :</strong> 101 Townsend Street, San Francisco, CA 94107, États-Unis</p>
+        <p><strong>Site web :</strong> <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">www.cloudflare.com</a></p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2><i class="fas fa-shield-alt"></i> Protection des données personnelles</h2>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés du 6 janvier 1978 :</p>
+
+      <h3>Données collectées</h3>
+      <p>Les données personnelles collectées sur ce site sont limitées à :</p>
+      <ul>
+        <li>Nom et prénom</li>
+        <li>Adresse email</li>
+        <li>Numéro de téléphone (facultatif)</li>
+        <li>Message de contact</li>
+      </ul>
+
+      <h3>Finalité du traitement</h3>
+      <p>Ces données sont collectées exclusivement pour :</p>
+      <ul>
+        <li>Répondre à vos demandes de contact</li>
+        <li>Vous fournir des informations sur les prestations</li>
+        <li>Organiser les rendez-vous convenus</li>
+      </ul>
+
+      <h3>Durée de conservation</h3>
+      <p>Les données sont conservées pendant une durée maximale de 3 ans à compter de votre dernier contact, sauf obligation légale contraire.</p>
+
+      <h3>Vos droits</h3>
+      <p>Vous disposez des droits suivants sur vos données personnelles :</p>
+      <ul>
+        <li>Droit d'accès</li>
+        <li>Droit de rectification</li>
+        <li>Droit à l'effacement</li>
+        <li>Droit à la limitation du traitement</li>
+        <li>Droit à la portabilité des données</li>
+        <li>Droit d'opposition</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous à l'adresse email indiquée ci-dessus.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><i class="fas fa-cookie-bite"></i> Politique des cookies</h2>
+      <p>Ce site utilise des cookies essentiels au fonctionnement du site. Vous pouvez accepter ou refuser les cookies via le bandeau de consentement affiché lors de votre première visite.</p>
+      <p>Vous pouvez modifier vos préférences à tout moment en cliquant sur l'icône de paramètres des cookies en bas à gauche de l'écran.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><i class="fas fa-copyright"></i> Propriété intellectuelle</h2>
+      <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
+      <p>La reproduction totale ou partielle de ce site, ainsi que l'utilisation des contenus (textes, images, logos, etc.) sans l'accord préalable et écrit de l'éditeur sont interdites et constitueront une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
+      <p>Les photographies présentées sur ce site sont la propriété exclusive d'Anna Brevière--Dubard et ne peuvent être utilisées sans autorisation écrite.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><i class="fas fa-balance-scale"></i> Limitation de responsabilité</h2>
+      <p>L'éditeur du site met en œuvre tous les moyens nécessaires pour assurer la précision et la mise à jour des informations diffusées sur ce site. Cependant, il ne saurait être tenu responsable des omissions, des erreurs ou de l'incomplétude des informations présentées.</p>
+      <p>De même, l'éditeur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site ou de l'impossibilité d'y accéder.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><i class="fas fa-gavel"></i> Droit applicable</h2>
+      <p>Le présent site est soumis au droit français. En cas de litige, et à défaut d'amiable, sont seuls compétents les tribunaux français du ressort.</p>
+    </div>
+
+    <a href="index.html" class="legal-back-link">
+      <i class="fas fa-arrow-left"></i>
+      <span>Retour à l'accueil</span>
+    </a>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-text">&copy; 2025 BDA Makeup — Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="politique-confidentialite.html">Confidentialité</a>
+      <a href="accessibilite.html">Accessibilité</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+  <!-- THEME TOGGLE SCRIPT -->
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+
+      // Vérifier le thème enregistré
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      }
+
+      themeToggle.addEventListener('click', function() {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+        if (isLight) {
+          document.documentElement.removeAttribute('data-theme');
+          themeIcon.classList.replace('fa-moon', 'fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          themeIcon.classList.replace('fa-sun', 'fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    })();
+
+    /* ===== NAVBAR SCROLL ===== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+  </script>
+</body>
+</html>

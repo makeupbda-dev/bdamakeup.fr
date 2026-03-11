@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Conditions Générales de Vente - BDA Makeup</title>
+  <meta name="description" content="Conditions générales de vente et d'utilisation de BDA Makeup - Tarifs, annulation, remboursement." />
+  <link rel="canonical" href="https://bdamakeup.com/cgv.html" />
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- DNS prefetch -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ===== RESET & VARIABLES ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-section: #111111;
+      --bg-card: #1a1a1a;
+      --gold: #c9a96e;
+      --gold-light: #e2c891;
+      --gold-dark: #a07d4a;
+      --rose: #d4a0a0;
+      --white: #f5f0eb;
+      --gray: #888888;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-script: 'Great Vibes', cursive;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Thème clair */
+    [data-theme="light"] {
+      --bg-dark: #ffffff;
+      --bg-section: #f8f8f8;
+      --bg-card: #f0f0f0;
+      --white: #1a1a1a;
+      --gray: #666666;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-dark);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; transition: color var(--transition); }
+    a:hover { color: var(--gold); }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+    }
+
+    .navbar.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 0.8rem 3rem;
+      box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    }
+
+    [data-theme="light"] .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-logo {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      position: absolute;
+      left: 3rem;
+    }
+
+    .nav-logo:hover { color: var(--gold-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-right: 1rem;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(201, 169, 110, 0.1);
+      transform: scale(1.1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 3rem;
+    }
+
+    /* ===== CGV PAGE ===== */
+    .cgv-page {
+      padding: 8rem 2rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cgv-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .cgv-label {
+      font-family: var(--font-script);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .cgv-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cgv-date {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .cgv-section {
+      margin-bottom: 3rem;
+    }
+
+    .cgv-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .cgv-section h2 i {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .cgv-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    .cgv-section p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .cgv-section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .cgv-section li {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .cgv-section li::before {
+      content: '•';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .cgv-info-box {
+      background: var(--bg-card);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .cgv-info-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .cgv-info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cgv-warning-box {
+      background: rgba(212, 160, 160, 0.1);
+      border-left: 3px solid var(--rose);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .cgv-warning-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .cgv-warning-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cgv-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .cgv-table th,
+    .cgv-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .cgv-table th {
+      background: rgba(201, 169, 110, 0.1);
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .cgv-table td {
+      color: var(--gray);
+    }
+
+    .cgv-price {
+      display: inline-block;
+      background: rgba(201, 169, 110, 0.1);
+      color: var(--gold);
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
+
+    .cgv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .cgv-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .cgv-contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(201, 169, 110, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .cgv-contact-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .cgv-contact-text span {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .cgv-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .cgv-back-link i {
+      transition: transform var(--transition);
+    }
+
+    .cgv-back-link:hover i {
+      transform: translateX(-4px);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-section);
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .theme-toggle {
+        display: none;
+      }
+
+      .cgv-page {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      .cgv-contact {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .cgv-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="BDA Makeup - Accueil">BDA Makeup</a>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a href="index.html#accueil" role="menuitem">Accueil</a></li>
+      <li role="none"><a href="index.html#galerie" role="menuitem">Galerie</a></li>
+      <li role="none"><a href="index.html#apropos" role="menuitem">À propos</a></li>
+      <li role="none"><a href="index.html#contact" role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer entre le thème clair et sombre">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- CGV PAGE -->
+  <main class="cgv-page" role="main">
+    <div class="cgv-header">
+      <p class="cgv-label">Informations contractuelles</p>
+      <h1 class="cgv-title">Conditions Générales de Vente</h1>
+      <p class="cgv-date">Dernière mise à jour : mars 2025</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-info-circle"></i> Article 1 - Présentation</h2>
+      <p>Les présentes conditions générales de vente (CGV) régissent toutes les prestations de maquillage proposées par BDA Makeup. Elles s'appliquent à toute commande, réservation ou prestation effectuée par un client (ci-après « le Client ») auprès d'Anna Brevière--Dubard (ci-après « le Prestataire »).</p>
+      <p>La commande ou la réservation implique l'acceptation pleine et entière des présentes conditions générales de vente.</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-user"></i> Article 2 - Identité du Prestataire</h2>
+      <div class="cgv-info-box">
+        <p><strong>Nom :</strong> Anna Brevière--Dubard</p>
+        <p><strong>Activité :</strong> Maquilleuse professionnelle indépendante</p>
+        <p><strong>Forme juridique :</strong> Micro-entreprise (entreprise individuelle)</p>
+        <p><strong>Diplôme :</strong> Bachelor Makeup Artist - ITM Paris</p>
+        <p><strong>Email :</strong> <a href="mailto:makeup.bda@gmail.com">makeup.bda@gmail.com</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:+33781975952">+33 7 81 97 59 52</a></p>
+        <p><strong>Zone d'intervention :</strong> Île-de-France</p>
+      </div>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-list"></i> Article 3 - Prestations proposées</h2>
+      <p>BDA Makeup propose les prestations suivantes :</p>
+
+      <h3>Maquillage Beauté</h3>
+      <ul>
+        <li>Maquillage jour / soirée <span class="cgv-price">Sur devis</span></li>
+        <li>Maquillage mariée (essayage inclus) <span class="cgv-price">Sur devis</span></li>
+        <li>Maquillage pour shooting photo <span class="cgv-price">Sur devis</span></li>
+        <li>Maquillage événementiel <span class="cgv-price">Sur devis</span></li>
+      </ul>
+
+      <h3>Maquillage SFX & Artistique</h3>
+      <ul>
+        <li>Effets spéciaux (cicatrices, brûlures, vieillissement) <span class="cgv-price">Sur devis</span></li>
+        <li>Maquillage cinéma / télévision <span class="cgv-price">Sur devis</span></li>
+        <li>Body painting <span class="cgv-price">Sur devis</span></li>
+        <li>Maquillage artistique / créatif <span class="cgv-price">Sur devis</span></li>
+      </ul>
+
+      <p><strong>Délai d'intervention :</strong> Les prestations sont réalisées sur rendez-vous uniquement, dans toute l'Île-de-France. Des frais de déplacement peuvent s'appliquer selon la localisation.</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-euro-sign"></i> Article 4 - Tarifs et modalités de paiement</h2>
+
+      <h3>Détermination du prix</h3>
+      <p>Les tarifs sont établis sur la base d'un devis personnalisé, établi après échange avec le Client pour comprendre ses besoins spécifiques. Le devis précise :</p>
+      <ul>
+        <li>La nature de la prestation</li>
+        <li>La date et l'heure prévues</li>
+        <li>Le lieu d'intervention</li>
+        <li>Le nombre de personnes concernées (le cas échéant)</li>
+        <li>Le montant total TTC</li>
+        <li>Les éventuels frais de déplacement</li>
+      </ul>
+
+      <h3>Modalités de paiement</h3>
+      <p>Le paiement s'effectue selon les modalités suivantes :</p>
+
+      <table class="cgv-table">
+        <thead>
+          <tr>
+            <th>Étape</th>
+            <th>Montant</th>
+            <th>Modalités</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Acompte</strong></td>
+            <td>50% du montant total</td>
+            <td>À la réservation pour bloquer la date</td>
+          </tr>
+          <tr>
+            <td><strong>Solde</strong></td>
+            <td>50% restant</td>
+            <td>Le jour de la prestation</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Moyens de paiement acceptés</h3>
+      <ul>
+        <li>Virement bancaire</li>
+        <li>Espèces (dans la limite légale)</li>
+        <li>Chèque personnel (sauf pour les mariages)</li>
+        <li>PayPal (sur demande)</li>
+      </ul>
+
+      <div class="cgv-warning-box">
+        <p><strong>Important :</strong> La date n'est définitivement réservée qu'après réception de l'acompte. En l'absence d'acompte sous 7 jours, le devis est considéré comme non accepté et la date est libérée.</p>
+      </div>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-calendar-times"></i> Article 5 - Annulation et report</h2>
+      <p>Les conditions d'annulation ou de report de prestation sont les suivantes :</p>
+
+      <table class="cgv-table">
+        <thead>
+          <tr>
+            <th>Délai d'annulation</th>
+            <th>Remboursement</th>
+            <th>Report possible</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Plus de 30 jours</strong> avant la prestation</td>
+            <td>100% de l'acompte</td>
+            <td>Oui, sans frais</td>
+          </tr>
+          <tr>
+            <td><strong>15 à 30 jours</strong> avant la prestation</td>
+            <td>50% de l'acompte</td>
+            <td>Oui, sans frais</td>
+          </tr>
+          <tr>
+            <td><strong>Moins de 15 jours</strong> avant la prestation</td>
+            <td>Aucun remboursement</td>
+            <td>Oui, sous réserve de disponibilité</td>
+          </tr>
+          <tr>
+            <td><strong>Moins de 48 heures</strong> avant la prestation</td>
+            <td>100% de la prestation dû</td>
+            <td>Non</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Report de prestation</h3>
+      <p>En cas de report accepté :</p>
+      <ul>
+        <li>L'acompte déjà versé est conservé et déduit du nouveau montant</li>
+        <li>Si le nouveau tarif est supérieur, le Client régularise la différence</li>
+        <li>Si le nouveau tarif est inférieur, la différence est remboursée</li>
+        <li>Le report doit être demandé par écrit (email ou message)</li>
+      </ul>
+
+      <h3>Annulation par le Prestataire</h3>
+      <p>En cas d'annulation de la prestation par BDA Makeup (force majeure, maladie) :</p>
+      <ul>
+        <li>Remboursement intégral de tous les versements effectués</li>
+        <li>Proposition d'une date de remplacement si possible</li>
+        <li>Recherche active d'un remplaçant qualifié (si applicable)</li>
+      </ul>
+
+      <div class="cgv-warning-box">
+        <p><strong>Note importante :</strong> Pour les mariages, un délai d'annulation de 3 mois est recommandé afin de permettre au Prestataire de proposer sa disponibilité à d'autres clients. Les annulations moins de 3 mois avant la date du mariage sont soumises aux conditions ci-dessus.</p>
+      </div>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-exchange-alt"></i> Article 6 - Droit de rétractation</h2>
+      <p>Conformément au Code de la consommation, les prestations de services pleinement exécutées avant la fin du délai de rétractation de quatorze jours et dont l'exécution a commencé après accord explicite du consommateur ne bénéficient pas du droit de rétractation.</p>
+      <p>En conséquence, les prestations de maquillage, étant des services personnalisés et exécutés à une date convenue, ne sont pas soumises au droit de rétractation.</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-exclamation-triangle"></i> Article 7 - Obligations du Client</h2>
+      <p>Le Client s'engage à :</p>
+      <ul>
+        <li>Fournir toutes les informations nécessaires à la bonne réalisation de la prestation</li>
+        <li>Respecter les horaires convenus</li>
+        <li>Préparer sa peau selon les conseils donnés par le Prestataire</li>
+        <li>Déclarer toute allergie, sensibilité particulière ou traitement en cours</li>
+        <li>Mettre à disposition un espace de travail adapté (lumière naturelle, miroir, surface de travail)</li>
+        <li>Pour les mariages : participer à un essayage préalable (inclus dans le tarif)</li>
+      </ul>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-paint-brush"></i> Article 8 - Produits et hygiène</h2>
+      <p>BDA Makeup utilise exclusivement des produits de qualité professionnelle. Le Prestataire s'engage à :</p>
+      <ul>
+        <li>Utiliser des produits neuves ou désinfectés pour chaque prestation</li>
+        <li>Utiliser des pinceaux nettoyés et désinfectés</li>
+        <li>Proposer des produits adaptés au type de peau du Client</li>
+        <li>Respecter les règles d'hygiène en vigueur</li>
+      </ul>
+      <p>Le Client peut également choisir d'utiliser ses propres produits, sous sa propre responsabilité. Dans ce cas, le Prestataire ne saurait être tenu responsable d'éventuelles réactions cutanées.</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-camera"></i> Article 9 - Droits d'image</h2>
+      <p>Le Prestataire se réserve le droit d'utiliser les photographies réalisées lors de la prestation à des fins promotionnelles (site web, réseaux sociaux, portfolio), sauf demande contraire expresse du Client.</p>
+      <p>Le Client peut, à tout moment, demander le retrait des photographies le concernant en contactant le Prestataire.</p>
+      <p>Les photographies restent la propriété intellectuelle du Prestataire et ne peuvent être utilisées par le Client sans autorisation écrite préalable.</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-shield-alt"></i> Article 10 - Responsabilité et garantie</h2>
+      <p>Le Prestataire met en œuvre tous les moyens nécessaires pour assurer la bonne exécution de la prestation. Toutefois, il ne saurait être tenu responsable :</p>
+      <ul>
+        <li>Des réactions cutanées imprévisibles ou allergies non déclarées</li>
+        <li>De tout dommage résultant de l'utilisation de produits fournis par le Client</li>
+        <li>Des cas de force majeure (intempéries, grèves, pandémies, etc.)</li>
+        <li>De tout retard dû à des circonstances indépendantes de sa volonté</li>
+      </ul>
+      <p>Le Prestataire dispose d'une assurance responsabilité civile professionnelle couvrant les prestations réalisées.</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-file-contract"></i> Article 11 - Litiges et droit applicable</h2>
+      <p>Les présentes CGV sont régies par le droit français. En cas de litige, les parties s'efforceront de trouver une solution amiable.</p>
+      <p>À défaut d'accord amiable dans un délai de 30 jours, le litige sera soumis aux tribunaux compétents du ressort du Prestataire.</p>
+
+      <h3>Médiation</h3>
+      <p>Le Client dispose également de la possibilité de saisir le médiateur de la consommation :</p>
+      <div class="cgv-info-box">
+        <p><strong>Médiateur de la consommation</strong></p>
+        <p>11 rue de la Villette</p>
+        <p>75940 Paris Cedex 19</p>
+        <p><a href="https://www.mediation-conso.gouv.fr" target="_blank" rel="noopener noreferrer">www.mediation-conso.gouv.fr</a></p>
+      </div>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-edit"></i> Article 12 - Modifications des CGV</h2>
+      <p>BDA Makeup se réserve le droit de modifier les présentes conditions générales de vente à tout moment. Les CGV applicables sont celles en vigueur à la date de réservation de la prestation.</p>
+    </div>
+
+    <div class="cgv-section">
+      <h2><i class="fas fa-envelope"></i> Article 13 - Contact</h2>
+      <p>Pour toute question relative aux présentes conditions générales de vente, vous pouvez contacter :</p>
+      <div class="cgv-contact">
+        <div class="cgv-contact-item">
+          <div class="cgv-contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="cgv-contact-text">
+            <strong>Par email</strong>
+            <span><a href="mailto:makeup.bda@gmail.com">makeup.bda@gmail.com</a></span>
+          </div>
+        </div>
+        <div class="cgv-contact-item">
+          <div class="cgv-contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="cgv-contact-text">
+            <strong>Par téléphone</strong>
+            <span><a href="tel:+33781975952">+33 7 81 97 59 52</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="cgv-back-link">
+      <i class="fas fa-arrow-left"></i>
+      <span>Retour à l'accueil</span>
+    </a>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-text">&copy; 2025 BDA Makeup — Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+
+  <!-- THEME TOGGLE SCRIPT -->
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+
+      // Vérifier le thème enregistré
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      }
+
+      themeToggle.addEventListener('click', function() {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+        if (isLight) {
+          document.documentElement.removeAttribute('data-theme');
+          themeIcon.classList.replace('fa-moon', 'fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          themeIcon.classList.replace('fa-sun', 'fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    })();
+
+    /* ===== NAVBAR SCROLL ===== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+  </script>
+</body>
+</html>

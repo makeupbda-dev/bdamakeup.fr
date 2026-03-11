@@ -1,0 +1,126 @@
+================================================================================
+                    LISTE DÉTAILLÉE DES COOKIES UTILISÉS
+                        Site Web : BDA Makeup
+                        Date : 2026
+================================================================================
+
+1. COOKIES DE CONSENTEMENT ET PRÉFÉRENCES
+================================================================================
+
+┌─────────────────────────────────┬──────────────────────────────────────────────┐
+│ Nom du Cookie                   │ bda_cookie_consent                           │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Finalité                        │ Mémorise le choix de l'utilisateur concernant │
+│                                 │ l'acceptation ou le refus des cookies         │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Durée de vie                    │ 1 an (365 jours)                              │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Type                            │ Cookie de préférence / consentement           │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Essentiel                       │ Non                                           │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Domaine                         │ bdamakeup.com                                 │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Transmission                    │ HTTP et HTTPS                                 │
+└─────────────────────────────────┴──────────────────────────────────────────────┘
+
+┌─────────────────────────────────┬──────────────────────────────────────────────┐
+│ Nom du Cookie                   │ bda_cookie_preferences                       │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Finalité                        │ Stocke les préférences détaillées de l'utilisateur│
+│                                 │ concernant les différentes catégories de cookies │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Durée de vie                    │ 1 an (365 jours)                              │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Type                            │ Cookie de préférence                          │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Essentiel                       │ Non                                           │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Domaine                         │ bdamakeup.com                                 │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Transmission                    │ HTTP et HTTPS                                 │
+└─────────────────────────────────┴──────────────────────────────────────────────┘
+
+================================================================================
+2. COOKIES DE Tiers (Si applicables)
+================================================================================
+
+┌─────────────────────────────────┬──────────────────────────────────────────────┐
+│ Nom du Cookie                   │ _ga, _gid, _gat                              │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Finalité                        │ Google Analytics - Analyse de trafic et      │
+│                                 │ statistiques d'audience (si activé)          │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Durée de vie                    │ _ga : 2 ans                                  │
+│                                 │ _gid : 24 heures                             │
+│                                 │ _gat : 1 minute                              │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Type                            │ Cookie analytique (tiers)                    │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Essentiel                       │ Non - Soumis au consentement                 │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Domaine                         │ google-analytics.com                         │
+├─────────────────────────────────┼──────────────────────────────────────────────┤
+│ Responsable                     │ Google LLC                                   │
+└─────────────────────────────────┴──────────────────────────────────────────────┘
+
+================================================================================
+3. RÉSUMÉ PAR CATÉGORIE
+================================================================================
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ CATÉGORIE : COOKIES DE CONSENTEMENT                                         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ • bda_cookie_consent    : 1 an   - Mémorisation du choix utilisateur        │
+│ • bda_cookie_preferences: 1 an   - Stockage des préférences détaillées      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ CATÉGORIE : COOKIES ANALYTIQUES (Optionnels - Soumis au consentement)       │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ • _ga (Google Analytics): 2 ans  - Identification unique visiteur           │
+│ • _gid (Google Analytics): 24h  - Identification session courte             │
+│ • _gat (Google Analytics): 1 min - Limitation requêtes                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+4. GESTION DES COOKIES PAR L'UTILISATEUR
+================================================================================
+
+Les visiteurs du site peuvent :
+
+1. ACCEPTER OU REFUSER les cookies via le bandeau de consentement
+   → Apparaît lors de la première visite
+
+2. MODIFIER LEURS PRÉFÉRENCES à tout moment
+   → Via l'icône de paramètres (engrenage) en bas à gauche de l'écran
+
+3. CONFIGURER LEUR NAVIGATEUR pour refuser les cookies
+   → Note : Cela peut limiter certaines fonctionnalités du site
+
+================================================================================
+5. BASE LÉGALE ET CONFORMITÉ
+================================================================================
+
+• Conformité RGPD (Règlement Général sur la Protection des Données)
+• Conformité ePrivacy Directive (Directive Vie privée et communications électroniques)
+• Respect de la loi Informatique et Libertés (France)
+
+Les cookies de consentement sont nécessaires pour respecter les obligations
+légales en matière de protection des données personnelles.
+
+================================================================================
+6. CONTACT ET RÉCLAMATIONS
+================================================================================
+
+Pour toute question concernant les cookies ou les données personnelles :
+
+📧 Email : makeup.bda@gmail.com
+📞 Téléphone : +33 7 81 97 59 52
+
+En cas de réclamation, vous pouvez également contacter la CNIL :
+https://www.cnil.fr/fr/plaintes
+
+================================================================================
+                         Dernière mise à jour : Mars 2026
+================================================================================
