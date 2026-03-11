@@ -1727,26 +1727,35 @@
         min-width: 120px;
       }
 
-      /* Hide floating call button on desktop, show on mobile */
+      /* Hide floating call button on desktop, show on mobile - centered on mobile */
       .floating-call-btn {
         bottom: 1.5rem;
-        right: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
         width: 55px;
         height: 55px;
         font-size: 1.3rem;
       }
 
-      /* Adjust cookie settings button position on mobile */
+      .floating-call-btn.show {
+        transform: translateX(-50%) scale(1);
+      }
+
+      .floating-call-btn:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+
+      /* Cookie settings button position on mobile */
       .cookie-settings-btn {
-        bottom: 8rem;
+        bottom: 1.5rem;
         left: 1.5rem;
         width: 45px;
         height: 45px;
       }
 
-      /* Adjust back to top button position on mobile */
+      /* Back to top button position on mobile - bottom right */
       .back-to-top {
-        bottom: 8rem;
+        bottom: 1.5rem;
         right: 1.5rem;
       }
     }
