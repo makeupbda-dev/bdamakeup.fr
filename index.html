@@ -617,15 +617,6 @@
       border-color: var(--gold);
     }
 
-    @media (max-width: 768px) {
-      .theme-toggle {
-        margin-right: 0.5rem;
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-      }
-    }
-
     /* ===== HERO / ACCUEIL ===== */
     .hero {
       position: relative;
@@ -1679,11 +1670,44 @@
     }
 
     @media (max-width: 768px) {
-      .navbar { padding: 1rem 1.5rem; }
+      .navbar {
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+      }
       .navbar.scrolled { padding: 0.7rem 1.5rem; }
       .nav-links { display: none; }
       .burger { display: flex; }
       .mobile-menu { display: flex; }
+
+      /* Logo responsive */
+      .nav-logo {
+        position: static;
+        font-size: 1.5rem;
+        margin-right: auto;
+      }
+
+      /* Nav actions - remove absolute positioning on mobile */
+      .nav-actions {
+        position: static;
+        gap: 0.5rem;
+      }
+
+      /* Theme toggle on mobile */
+      .theme-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        margin-right: 0;
+      }
+
+      /* Burger on mobile */
+      .burger {
+        padding: 3px;
+      }
+      .burger span {
+        width: 24px;
+        height: 2px;
+      }
 
       .section { padding: 5rem 1.5rem; }
 
