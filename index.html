@@ -1669,6 +1669,22 @@
       .contact-container { grid-template-columns: 1fr; gap: 3rem; }
     }
 
+    /* Tablettes et écrans intermédiaires (évite la superposition du logo sur les liens) */
+    @media (max-width: 1024px) {
+      .navbar {
+        justify-content: space-between;
+      }
+      .nav-logo {
+        position: static;
+        font-size: 1.7rem;
+        margin-right: 2rem;
+      }
+      .nav-actions {
+        position: static;
+        gap: 1rem;
+      }
+    }
+
     @media (max-width: 768px) {
       .navbar {
         padding: 1rem 1.5rem;
