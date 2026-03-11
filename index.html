@@ -353,6 +353,7 @@
       --rose: #d4a0a0;
       --white: #f5f0eb;
       --gray: #888888;
+      --lightbox-bg: rgba(0, 0, 0, 0.95);
       --font-display: 'Playfair Display', serif;
       --font-body: 'Montserrat', sans-serif;
       --font-script: 'Great Vibes', cursive;
@@ -370,6 +371,7 @@
       --rose: #d4a0a0;
       --white: #1a1a1a;
       --gray: #666666;
+      --lightbox-bg: rgba(255, 255, 255, 0.95);
     }
 
     html {
@@ -1023,7 +1025,7 @@
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.95);
+      background: var(--lightbox-bg);
       z-index: 9999;
       display: flex;
       align-items: center;
@@ -1049,6 +1051,10 @@
     }
 
     .lightbox-close:hover { color: var(--gold); }
+
+    [data-theme="light"] .lightbox-close {
+      color: var(--bg-dark);
+    }
 
     .lightbox-content {
       max-width: 80vw;
@@ -1102,6 +1108,10 @@
     .lightbox-nav:hover {
       background: var(--gold);
       color: var(--bg-dark);
+    }
+
+    [data-theme="light"] .lightbox-nav {
+      border-color: rgba(201,169,110,0.5);
     }
 
     .lightbox-prev { left: 2rem; }
